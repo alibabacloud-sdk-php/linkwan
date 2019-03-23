@@ -2,7 +2,148 @@
 
 namespace AlibabaCloud\LinkWAN\V20181230;
 
+use AlibabaCloud\ApiResolverTrait;
 use AlibabaCloud\Rpc;
+
+/**
+ * Resolve Api based on the method name.
+ *
+ * @method SubmitExternalNodesAddingTask submitExternalNodesAddingTask(array $options = [])
+ * @method SubmitExternalNodeTuplesImportingTask submitExternalNodeTuplesImportingTask(array $options = [])
+ * @method DeleteExternalNodeTuples deleteExternalNodeTuples(array $options = [])
+ * @method UpdateEmbeddedNsAutoSyncEnablingState updateEmbeddedNsAutoSyncEnablingState(array $options = [])
+ * @method CreateCustomLocalJoinPermission createCustomLocalJoinPermission(array $options = [])
+ * @method MeteringQuerySubscribePush meteringQuerySubscribePush(array $options = [])
+ * @method MeteringSubscribePush meteringSubscribePush(array $options = [])
+ * @method QueryMeteringDetail queryMeteringDetail(array $options = [])
+ * @method QueryMeteringStatistics queryMeteringStatistics(array $options = [])
+ * @method MeteringUnsubscribePush meteringUnsubscribePush(array $options = [])
+ * @method UpdateRoamingJoinPermission updateRoamingJoinPermission(array $options = [])
+ * @method UpdateOwnedLocalJoinPermission updateOwnedLocalJoinPermission(array $options = [])
+ * @method UpdateRoamingJoinPermissionEnablingState updateRoamingJoinPermissionEnablingState(array $options = [])
+ * @method UpdateOwnedLocalJoinPermissionEnablingState updateOwnedLocalJoinPermissionEnablingState(array $options = [])
+ * @method ListNodeTransferPacketPaths listNodeTransferPacketPaths(array $options = [])
+ * @method CountNodesByNodeGroupId countNodesByNodeGroupId(array $options = [])
+ * @method CountNodesByOwnedJoinPermissionId countNodesByOwnedJoinPermissionId(array $options = [])
+ * @method ListNodesByNodeGroupId listNodesByNodeGroupId(array $options = [])
+ * @method ListNodesByOwnedJoinPermissionId listNodesByOwnedJoinPermissionId(array $options = [])
+ * @method SendMulticastCommand sendMulticastCommand(array $options = [])
+ * @method SendUnicastCommand sendUnicastCommand(array $options = [])
+ * @method ListBoundNodesByMcAddress listBoundNodesByMcAddress(array $options = [])
+ * @method GetNodeMulticastConfig getNodeMulticastConfig(array $options = [])
+ * @method GetMulticastGroup getMulticastGroup(array $options = [])
+ * @method UnbindNodesFromMulticastGroup unbindNodesFromMulticastGroup(array $options = [])
+ * @method BindNodesToMulticastGroup bindNodesToMulticastGroup(array $options = [])
+ * @method DeleteMulticastGroup deleteMulticastGroup(array $options = [])
+ * @method CreateMulticastGroup createMulticastGroup(array $options = [])
+ * @method UpdateNotificationsHandleState updateNotificationsHandleState(array $options = [])
+ * @method UpdateLabNodeJoinAcceptConfig updateLabNodeJoinAcceptConfig(array $options = [])
+ * @method UpdateLabNodeDownlinkConfig updateLabNodeDownlinkConfig(array $options = [])
+ * @method UpdateLabNodeDebugConfig updateLabNodeDebugConfig(array $options = [])
+ * @method UpdateLabNode updateLabNode(array $options = [])
+ * @method UpdateLabGatewayUartCtrl updateLabGatewayUartCtrl(array $options = [])
+ * @method UpdateLabGatewaySshCtrl updateLabGatewaySshCtrl(array $options = [])
+ * @method UpdateLabGatewayGwmpConfig updateLabGatewayGwmpConfig(array $options = [])
+ * @method UpdateLabGateway updateLabGateway(array $options = [])
+ * @method UpdateGatewayEnablingState updateGatewayEnablingState(array $options = [])
+ * @method UpdateGateway updateGateway(array $options = [])
+ * @method UnregisterKpmPublicKey unregisterKpmPublicKey(array $options = [])
+ * @method UnbindLabNodeFromLabGateway unbindLabNodeFromLabGateway(array $options = [])
+ * @method TriggerLabGatewayLogReport triggerLabGatewayLogReport(array $options = [])
+ * @method TriggerLabGatewayDeviceInfoReport triggerLabGatewayDeviceInfoReport(array $options = [])
+ * @method TriggerLabGatewayConfigReport triggerLabGatewayConfigReport(array $options = [])
+ * @method SubmitNodeTupleOrder submitNodeTupleOrder(array $options = [])
+ * @method SubmitGatewayTupleOrder submitGatewayTupleOrder(array $options = [])
+ * @method SendMacCommandToLabNode sendMacCommandToLabNode(array $options = [])
+ * @method SendBusinessCommandToLabNode sendBusinessCommandToLabNode(array $options = [])
+ * @method RegisterKpmPublicKey registerKpmPublicKey(array $options = [])
+ * @method RebootLabGateway rebootLabGateway(array $options = [])
+ * @method ListNotifications listNotifications(array $options = [])
+ * @method ListNodeTupleOrders listNodeTupleOrders(array $options = [])
+ * @method ListNodeGroupTransferFlowStats listNodeGroupTransferFlowStats(array $options = [])
+ * @method ListLabNodes listLabNodes(array $options = [])
+ * @method ListLabNodeLogs listLabNodeLogs(array $options = [])
+ * @method ListLabGateways listLabGateways(array $options = [])
+ * @method ListLabGatewayLogs listLabGatewayLogs(array $options = [])
+ * @method ListGatewayTupleOrders listGatewayTupleOrders(array $options = [])
+ * @method ListGatewayTransferPackets listGatewayTransferPackets(array $options = [])
+ * @method ListGatewayTransferFlowStats listGatewayTransferFlowStats(array $options = [])
+ * @method ListGatewaysGisInfo listGatewaysGisInfo(array $options = [])
+ * @method ListGatewayOnlineRecords listGatewayOnlineRecords(array $options = [])
+ * @method ListBoundLabNodes listBoundLabNodes(array $options = [])
+ * @method ListBoundLabGateways listBoundLabGateways(array $options = [])
+ * @method ListActiveGateways listActiveGateways(array $options = [])
+ * @method GetUserLicense getUserLicense(array $options = [])
+ * @method GetNotification getNotification(array $options = [])
+ * @method GetNodeTuplesDownloadUrl getNodeTuplesDownloadUrl(array $options = [])
+ * @method GetNodeTupleOrder getNodeTupleOrder(array $options = [])
+ * @method GetLabNodeJoinAcceptConfig getLabNodeJoinAcceptConfig(array $options = [])
+ * @method GetLabNodeDownlinkConfig getLabNodeDownlinkConfig(array $options = [])
+ * @method GetLabNodeDebugConfig getLabNodeDebugConfig(array $options = [])
+ * @method GetLabNode getLabNode(array $options = [])
+ * @method GetLabGatewayGwmpConfig getLabGatewayGwmpConfig(array $options = [])
+ * @method GetLabGateway getLabGateway(array $options = [])
+ * @method GetGatewayTuplesDownloadUrl getGatewayTuplesDownloadUrl(array $options = [])
+ * @method GetGatewayTupleOrder getGatewayTupleOrder(array $options = [])
+ * @method GetGatewayTransferPacketsDownloadUrl getGatewayTransferPacketsDownloadUrl(array $options = [])
+ * @method GetGatewayStatusStat getGatewayStatusStat(array $options = [])
+ * @method GetGatewayPacketStat getGatewayPacketStat(array $options = [])
+ * @method GetGateway getGateway(array $options = [])
+ * @method GetFreqBandPlanGroup getFreqBandPlanGroup(array $options = [])
+ * @method DescribeRegions describeRegions(array $options = [])
+ * @method DeleteLabNode deleteLabNode(array $options = [])
+ * @method DeleteLabGateway deleteLabGateway(array $options = [])
+ * @method DeleteGateway deleteGateway(array $options = [])
+ * @method CreateLabNode createLabNode(array $options = [])
+ * @method CreateLabGateway createLabGateway(array $options = [])
+ * @method CreateGateway createGateway(array $options = [])
+ * @method CountNotifications countNotifications(array $options = [])
+ * @method CountNodeTupleOrders countNodeTupleOrders(array $options = [])
+ * @method CountLabNodes countLabNodes(array $options = [])
+ * @method CountGateways countGateways(array $options = [])
+ * @method DeleteLocalJoinPermission deleteLocalJoinPermission(array $options = [])
+ * @method CreateLocalJoinPermission createLocalJoinPermission(array $options = [])
+ * @method BindLabNodeToLabGateway bindLabNodeToLabGateway(array $options = [])
+ * @method GetOwnedJoinPermission getOwnedJoinPermission(array $options = [])
+ * @method GetRentedJoinPermission getRentedJoinPermission(array $options = [])
+ * @method ListOwnedJoinPermissions listOwnedJoinPermissions(array $options = [])
+ * @method ListRentedJoinPermissions listRentedJoinPermissions(array $options = [])
+ * @method CountLabGateways countLabGateways(array $options = [])
+ * @method CountOwnedJoinPermissions countOwnedJoinPermissions(array $options = [])
+ * @method CountGatewayTupleOrders countGatewayTupleOrders(array $options = [])
+ * @method CountRentedJoinPermissions countRentedJoinPermissions(array $options = [])
+ * @method ApplyRoamingJoinPermission applyRoamingJoinPermission(array $options = [])
+ * @method ReturnJoinPermission returnJoinPermission(array $options = [])
+ * @method SubmitJoinPermissionAuthOrder submitJoinPermissionAuthOrder(array $options = [])
+ * @method AcceptJoinPermissionAuthOrder acceptJoinPermissionAuthOrder(array $options = [])
+ * @method CancelJoinPermissionAuthOrder cancelJoinPermissionAuthOrder(array $options = [])
+ * @method RejectJoinPermissionAuthOrder rejectJoinPermissionAuthOrder(array $options = [])
+ * @method GetJoinPermissionAuthOrder getJoinPermissionAuthOrder(array $options = [])
+ * @method GetKpmPublicKey getKpmPublicKey(array $options = [])
+ * @method CreateNodeGroup createNodeGroup(array $options = [])
+ * @method DeleteNodeGroup deleteNodeGroup(array $options = [])
+ * @method UpdateNodeGroup updateNodeGroup(array $options = [])
+ * @method GetNodeGroup getNodeGroup(array $options = [])
+ * @method ListNodeGroups listNodeGroups(array $options = [])
+ * @method CountNodeGroups countNodeGroups(array $options = [])
+ * @method BindJoinPermissionToNodeGroup bindJoinPermissionToNodeGroup(array $options = [])
+ * @method UpdateDataDispatchConfig updateDataDispatchConfig(array $options = [])
+ * @method UpdateDataDispatchEnablingState updateDataDispatchEnablingState(array $options = [])
+ * @method AddNodeToGroup addNodeToGroup(array $options = [])
+ * @method RemoveNodeFromGroup removeNodeFromGroup(array $options = [])
+ * @method GetNode getNode(array $options = [])
+ * @method ListNodeGroupTransferPackets listNodeGroupTransferPackets(array $options = [])
+ * @method GetNodeGroupTransferPacketsDownloadUrl getNodeGroupTransferPacketsDownloadUrl(array $options = [])
+ * @method UnbindJoinPermissionFromNodeGroup unbindJoinPermissionFromNodeGroup(array $options = [])
+ * @method ListGateways listGateways(array $options = [])
+ * @method ListFreqBandPlanGroups listFreqBandPlanGroups(array $options = [])
+ * @method ListActivatedFeatures listActivatedFeatures(array $options = [])
+ * @method CheckCloudProductOpenStatus checkCloudProductOpenStatus(array $options = [])
+ */
+class LinkWANApiResolver
+{
+    use ApiResolverTrait;
+}
 
 class V20181230Rpc extends Rpc
 {
@@ -20,6 +161,103 @@ class V20181230Rpc extends Rpc
 
     /** @var string */
     public $serviceCode = 'linkwan';
+}
+
+/**
+ * @method string getNodeGroupId()
+ * @method $this withNodeGroupId($value)
+ * @method array getNodes()
+ */
+class SubmitExternalNodesAddingTask extends V20181230Rpc
+{
+
+    /**
+     * @param array $nodes
+     *
+     * @return $this
+     */
+    public function withNodes(array $nodes)
+    {
+        $this->data['Nodes'] = $nodes;
+        foreach ($nodes as $depth1 => $depth1Value) {
+            $this->options['query']['Nodes.' . ($depth1 + 1) . '.DevEui'] = $depth1Value['DevEui'];
+        }
+
+        return $this;
+    }
+}
+
+/**
+ * @method array getNodeTuples()
+ */
+class SubmitExternalNodeTuplesImportingTask extends V20181230Rpc
+{
+
+    /**
+     * @param array $nodeTuples
+     *
+     * @return $this
+     */
+    public function withNodeTuples(array $nodeTuples)
+    {
+        $this->data['NodeTuples'] = $nodeTuples;
+        foreach ($nodeTuples as $depth1 => $depth1Value) {
+            $this->options['query']['NodeTuples.' . ($depth1 + 1) . '.AppSKey'] = $depth1Value['AppSKey'];
+            $this->options['query']['NodeTuples.' . ($depth1 + 1) . '.NwkSKey'] = $depth1Value['NwkSKey'];
+            $this->options['query']['NodeTuples.' . ($depth1 + 1) . '.LoraVer'] = $depth1Value['LoraVer'];
+            $this->options['query']['NodeTuples.' . ($depth1 + 1) . '.DevEui'] = $depth1Value['DevEui'];
+        }
+
+        return $this;
+    }
+}
+
+/**
+ * @method array getDevEuiList()
+ */
+class DeleteExternalNodeTuples extends V20181230Rpc
+{
+
+    /**
+     * @param array $devEuiList
+     *
+     * @return $this
+     */
+    public function withDevEuiList(array $devEuiList)
+    {
+        $this->data['DevEuiList'] = $devEuiList;
+        foreach ($devEuiList as $i => $iValue) {
+            $this->options['query']['DevEuiList.' . ($i + 1)] = $iValue;
+        }
+
+        return $this;
+    }
+}
+
+/**
+ * @method string getInstanceId()
+ * @method $this withInstanceId($value)
+ * @method string getEnabled()
+ * @method $this withEnabled($value)
+ */
+class UpdateEmbeddedNsAutoSyncEnablingState extends V20181230Rpc
+{
+}
+
+/**
+ * @method string getClassMode()
+ * @method $this withClassMode($value)
+ * @method string getFreqBandPlanGroupId()
+ * @method $this withFreqBandPlanGroupId($value)
+ * @method string getJoinEui()
+ * @method $this withJoinEui($value)
+ * @method string getJoinPermissionName()
+ * @method $this withJoinPermissionName($value)
+ */
+class CreateCustomLocalJoinPermission extends V20181230Rpc
+{
+    /** @var string */
+    public $scheme = 'http';
 }
 
 /**
@@ -298,14 +536,14 @@ class UnbindNodesFromMulticastGroup extends V20181230Rpc
 
 
     /**
-     * @param array $value
+     * @param array $devEuiList
      *
      * @return $this
      */
-    public function withDevEuiList(array $value)
+    public function withDevEuiList(array $devEuiList)
     {
-        $this->data['DevEuiList'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['DevEuiList'] = $devEuiList;
+        foreach ($devEuiList as $i => $iValue) {
             $this->options['query']['DevEuiList.' . ($i + 1)] = $iValue;
         }
 
@@ -325,14 +563,14 @@ class BindNodesToMulticastGroup extends V20181230Rpc
 
 
     /**
-     * @param array $value
+     * @param array $devEuiList
      *
      * @return $this
      */
-    public function withDevEuiList(array $value)
+    public function withDevEuiList(array $devEuiList)
     {
-        $this->data['DevEuiList'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['DevEuiList'] = $devEuiList;
+        foreach ($devEuiList as $i => $iValue) {
             $this->options['query']['DevEuiList.' . ($i + 1)] = $iValue;
         }
 
@@ -380,14 +618,14 @@ class UpdateNotificationsHandleState extends V20181230Rpc
 
 
     /**
-     * @param array $value
+     * @param array $notificationId
      *
      * @return $this
      */
-    public function withNotificationId(array $value)
+    public function withNotificationId(array $notificationId)
     {
-        $this->data['NotificationId'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['NotificationId'] = $notificationId;
+        foreach ($notificationId as $i => $iValue) {
             $this->options['query']['NotificationId.' . ($i + 1)] = $iValue;
         }
 
@@ -652,14 +890,14 @@ class ListNotifications extends V20181230Rpc
     public $method = 'GET';
 
     /**
-     * @param array $value
+     * @param array $category
      *
      * @return $this
      */
-    public function withCategory(array $value)
+    public function withCategory(array $category)
     {
-        $this->data['Category'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['Category'] = $category;
+        foreach ($category as $i => $iValue) {
             $this->options['query']['Category.' . ($i + 1)] = $iValue;
         }
 
@@ -687,14 +925,14 @@ class ListNodeTupleOrders extends V20181230Rpc
 
 
     /**
-     * @param array $value
+     * @param array $state
      *
      * @return $this
      */
-    public function withState(array $value)
+    public function withState(array $state)
     {
-        $this->data['State'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['State'] = $state;
+        foreach ($state as $i => $iValue) {
             $this->options['query']['State.' . ($i + 1)] = $iValue;
         }
 
@@ -807,14 +1045,14 @@ class ListGatewayTupleOrders extends V20181230Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $state
      *
      * @return $this
      */
-    public function withState(array $value)
+    public function withState(array $state)
     {
-        $this->data['State'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['State'] = $state;
+        foreach ($state as $i => $iValue) {
             $this->options['query']['State.' . ($i + 1)] = $iValue;
         }
 
@@ -1149,14 +1387,14 @@ class CountNotifications extends V20181230Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $category
      *
      * @return $this
      */
-    public function withCategory(array $value)
+    public function withCategory(array $category)
     {
-        $this->data['Category'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['Category'] = $category;
+        foreach ($category as $i => $iValue) {
             $this->options['query']['Category.' . ($i + 1)] = $iValue;
         }
 
@@ -1173,14 +1411,14 @@ class CountNodeTupleOrders extends V20181230Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $states
      *
      * @return $this
      */
-    public function withStates(array $value)
+    public function withStates(array $states)
     {
-        $this->data['States'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['States'] = $states;
+        foreach ($states as $i => $iValue) {
             $this->options['query']['States.' . ($i + 1)] = $iValue;
         }
 
@@ -1353,14 +1591,14 @@ class CountGatewayTupleOrders extends V20181230Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $states
      *
      * @return $this
      */
-    public function withStates(array $value)
+    public function withStates(array $states)
     {
-        $this->data['States'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['States'] = $states;
+        foreach ($states as $i => $iValue) {
             $this->options['query']['States.' . ($i + 1)] = $iValue;
         }
 
